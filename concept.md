@@ -86,6 +86,7 @@ Instant Settlement      Temporary Hold
                  |           |          |
                  v           v          v
              Settlement   Reversal   Investigation
+---
 
 5. Transaction Lineage
 SafePay also maintains a relationship between connected transactions.
@@ -101,6 +102,8 @@ A -> B -> C -> D
 the system can represent the relationships as a transaction graph.
 This is intended to improve investigation and traceability.
 Transaction lineage does not by itself prove fraud or identify a criminal. It provides structured transaction context for investigation.
+---
+
 6. Risk-Adaptive Principle
 SafePay should not introduce confirmation for every transaction.
 Example:
@@ -124,10 +127,14 @@ High risk
 Temporary hold + receiver confirmation
 
 The amount threshold and risk parameters are configurable prototype policies rather than fixed banking standards.
+---
+
 7. P2P and Merchant Payments
 SafePay primarily focuses on P2P payments.
 P2P and merchant/P2M payments should have separate policy configurations because their transaction contexts and expected behaviours are different.
 SafePay does not assume that a policy designed for a person-to-person payment should automatically be applied to merchant payments.
+---
+
 8. What SafePay Is
 SafePay is:
 - a payment-security proof-of-concept,
@@ -136,6 +143,8 @@ SafePay is:
 - a transaction-lineage system,
 - a provider-independent architecture,
 - a platform for testing payment-security policies.
+---
+
 9. What SafePay Is Not
 SafePay is not:
 - a replacement for UPI or other payment rails,
@@ -146,6 +155,8 @@ SafePay is not:
 - a replacement for Verification of Payee,
 - a claim that receiver confirmation is a completely new concept.
 The project is intended to demonstrate and evaluate a possible combination of existing payment-security concepts in a new application context.
+---
+
 10. Provider Independence
 The SafePay policy engine should not depend on a particular payment provider.
 The architecture will use a common payment interface with provider-specific adapters.
@@ -156,6 +167,8 @@ Planned test integrations:
 4. PayPal Sandbox
 The payment provider acts as a test/payment infrastructure layer.
 The SafePay risk and policy logic remains independent.
+---
+
 11. Project Goal
 The goal is to build a working proof-of-concept that can demonstrate:
 1. Risk assessment
@@ -169,3 +182,8 @@ The goal is to build a working proof-of-concept that can demonstrate:
 9. Configurable payment policies
 10. Integration with multiple payment-provider test environments
 The final system should be suitable for demonstration to fintech companies, banks, payment technology companies, researchers, and financial-infrastructure organisations.
+---
+
+## 12. North-Star Statement
+
+> SafePay explores how instant P2P payments can remain instant for normal transactions while introducing a smart safety checkpoint when a transaction needs a second look.
